@@ -1,0 +1,5 @@
+2017/10/17 19:46:25 [error] 12698#12698: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'ComposerAutoloaderInit7556b86670f2dc88e6e44901252f012d' not found in /app/vendor/autoload.php:7
+Stack trace:
+#0 /app/frontend/web/index.php(5): require()
+#1 {main}
+  thrown in /app/vendor/autoload.php on line 7" while reading response header from upstream, client: 192.168.83.1, server: shop.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "shop.dev"
