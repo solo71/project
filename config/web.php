@@ -6,6 +6,15 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'main' => [
+            'class' => 'app\modules\main\Module',
+        ],
+        'user' => [
+            'class' => 'app\modules\user\Module',
+        ],
+    ],
+
     'components' => [
         'user' => [
             'identityClass' => 'app\models\User',
@@ -20,6 +29,7 @@ $config = [
     ],
 ];
 
+
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
@@ -27,6 +37,8 @@ if (YII_ENV_DEV) {
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
+    $config['modules']['gii'] = ['class' => \yii\gii\Module::className(),
+        'allowedIPs' => ['*']];
 }
 
 return $config;
