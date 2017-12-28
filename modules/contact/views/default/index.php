@@ -7,7 +7,7 @@ use yii\captcha\Captcha;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \app\modules\contact\models\ContactForm */
 
-$this->title = 'Contact';
+$this->title = Yii::t('app', 'TITLE_CONTACT');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="contact-default-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
 		<div class="alert alert-success">
-			Thank you for contacting us. We will respond to you as soon as possible.
+            <?= Yii::t('app', 'CONTACT_THANKS'); ?>
 		</div>
 
 		<p>
@@ -33,7 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?php else: ?>
 
 		<p>
-			If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+            <?php //If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+            echo Yii::t('app', 'CONTACT_MESSAGE'); ?>
 		</p>
 
 		<div class="row">
@@ -48,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
 				]) ?>
 				<div class="form-group">
-					<?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+					<?= Html::submitButton(Yii::t('app', 'BUTTON_SEND'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
 				</div>
 				<?php ActiveForm::end(); ?>
 			</div>

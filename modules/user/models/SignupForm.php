@@ -17,6 +17,14 @@ class SignupForm extends Model
     /**
      * @return array the validation rules.
      */
+    public function attributeLabels()
+    {
+        return [
+            //     'username' => Yii::t('app', 'USER_USERNAME'),
+            'password' => Yii::t('app', 'USER_PASSWORD'),
+        ];
+    }
+
     public function rules()
     {
         return [
@@ -29,7 +37,7 @@ class SignupForm extends Model
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => User::className(), 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => User::className(), 'message' => Yii::t('app', 'ERROR_EMAIL_EXISTS')],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],

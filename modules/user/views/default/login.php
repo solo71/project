@@ -6,13 +6,15 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \app\modules\user\models\LoginForm */
 
-$this->title = 'Login';
+$this->title = Yii::t('app', 'TITLE_LOGIN');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-default-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+    <p>
+        <?php //Please fill out the following fields to login:
+        echo Yii::t('app', 'LOGIN_MESSAGE'); ?></p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
@@ -33,13 +35,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="form-group" style="color: #999;">
         <div class="col-lg-offset-1 col-lg-11">
-            If you forgot your password you can <?= Html::a('reset it', ['/user/default/request-password-reset']) ?>
+            <?php //If you forgot your password you can
+            echo Yii::t('app', 'LOGIN_FOR_PASSWORD');?>
+            <?= Html::a('сбросить его', ['/user/default/request-password-reset']) ?>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+            <?= Html::submitButton(Yii::t('app', 'BUTTON_LOGIN'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         </div>
     </div>
 

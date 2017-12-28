@@ -3,6 +3,14 @@ body {
     height: 100%;
 }
 
+h1 {
+    display: none;
+}
+
+.jumbotron h1 {
+    display: block;
+}
+
 .wrap {
     min-height: 100%;
     height: auto;
