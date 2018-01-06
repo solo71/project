@@ -51,14 +51,14 @@ class PasswordChangeForm extends Model
      * @param string $attribute
      * @param array $params
      */
-/*    public function currentPassword($attribute, $params)
+    public function currentPassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
             if (!$this->_user->validatePassword($this->$attribute)) {
                 $this->addError($attribute, Yii::t('app', 'ERROR_WRONG_CURRENT_PASSWORD'));
             }
         }
-    }*/
+    }
 
     /**
      * @return boolean
