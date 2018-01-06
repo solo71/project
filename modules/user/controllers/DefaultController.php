@@ -4,7 +4,6 @@ namespace app\modules\user\controllers;
 
 use app\modules\user\models\EmailConfirmForm;
 use app\modules\user\models\LoginForm;
-use app\modules\user\models\PasswordChangeForm;
 use app\modules\user\models\PasswordResetRequestForm;
 use app\modules\user\models\PasswordResetForm;
 use app\modules\user\models\SignupForm;
