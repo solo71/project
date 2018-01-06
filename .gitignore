@@ -31,3 +31,8 @@ tests/_support/_generated
 /.gitignore
 
 /config/*-local.php
+!/vendor/bower-asset/html5shiv/
+!/vendor/bower-asset/respond/
+/composer.json
+/composer.lock
+/Vagrantfile

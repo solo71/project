@@ -33,13 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?php else: ?>
 
 		<p>
-            <?php //If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+            <?php //If you have business inquiries or other questions, please fill out the following forms to contact us. Thank you.
             echo Yii::t('app', 'CONTACT_MESSAGE'); ?>
 		</p>
 
 		<div class="row">
 			<div class="col-lg-5">
-				<?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+				<?php $form = ActiveForm::begin(['id' => 'contact-forms']); ?>
 				<?= $form->field($model, 'name') ?>
 				<?= $form->field($model, 'email') ?>
 				<?= $form->field($model, 'subject') ?>

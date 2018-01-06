@@ -8,7 +8,7 @@ $confirmLink = Yii::$app->urlManager->createAbsoluteUrl(['user/default/confirm-e
 ?>
 
 <?= Yii::t('app', 'HELLO!'); ?>
-
+<?= Html::encode($user->username) ?>
 <?= Yii::t('app', 'FOLLOW_TO_CONFIRM_EMAIL') ?>
 
 <?= $confirmLink ?>

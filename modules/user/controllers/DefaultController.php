@@ -4,8 +4,9 @@ namespace app\modules\user\controllers;
 
 use app\modules\user\models\EmailConfirmForm;
 use app\modules\user\models\LoginForm;
+use app\modules\user\models\PasswordChangeForm;
 use app\modules\user\models\PasswordResetRequestForm;
-use app\modules\user\models\ResetPasswordForm;
+use app\modules\user\models\PasswordResetForm;
 use app\modules\user\models\SignupForm;
 use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
@@ -112,27 +113,33 @@ class DefaultController extends Controller
             }
         }
 
-        return $this->render('requestPasswordResetToken', [
+        return $this->render('passwordRequestResetToken', [
             'model' => $model,
         ]);
     }
 
-    public function actionResetPassword($token)
+    public function actionPasswordReset($token)
     {
         try {
-            $model = new ResetPasswordForm($token);
+            $model = new PasswordResetForm($token);
         } catch (InvalidParamException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->passwordReset()) {
             Yii::$app->getSession()->setFlash('success', 'Спасибо! Пароль успешно изменён.');
 
             return $this->goHome();
         }
 
-        return $this->render('resetPassword', [
+        return $this->render('passwordReset', [
             'model' => $model,
         ]);
     }
+
+    public function actionIndex()
+    {
+        return $this->redirect(['profile/index'], 301);
+    }
+
 }

@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "{{%user}}".
@@ -27,6 +28,8 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_WAIT = 2;
+    const SCENARIO_PROFILE = 'profile';
+
 
     /**
      * @inheritdoc
@@ -42,10 +45,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-         /*   ['username', 'required'],
-            ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => self::className(), 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],*/
+ //           ['username', 'required'],
+            ['username', 'match', 'pattern' => '#^[\w_-]+$#i','message' => 'Только латинские буквы, цифры и знаки - _'],
+  //          ['username', 'unique', 'targetClass' => self::className(), 'message' => 'This username has already been taken.'],
+            ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'required'],
             ['email', 'email'],
@@ -67,7 +70,7 @@ class User extends ActiveRecord implements IdentityInterface
             'id' => 'ID',
             'created_at' => 'Создан',
             'updated_at' => 'Обновлён',
-         //   'username' => 'Имя пользователя',
+            'username' => 'Имя пользователя',
             'email' => 'Email',
             'status' => 'Статус',
         ];
@@ -266,4 +269,12 @@ class User extends ActiveRecord implements IdentityInterface
         }
         return false;
     }
+
+    public function scenarios()
+    {
+        return ArrayHelper::merge(parent::scenarios(), [
+            self::SCENARIO_PROFILE => ['email'],
+        ]);
+    }
+
 }

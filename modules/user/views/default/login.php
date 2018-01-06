@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
         echo Yii::t('app', 'LOGIN_MESSAGE'); ?></p>
 
     <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'options' => ['class' => 'form-horizontal'],
+        'id' => 'login-forms',
+        'options' => ['class' => 'forms-horizontal'],
         'fieldConfig' => [
             'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
             'labelOptions' => ['class' => 'col-lg-1 control-label'],

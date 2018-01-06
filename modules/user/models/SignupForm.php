@@ -4,9 +4,10 @@ namespace app\modules\user\models;
 
 use yii\base\Model;
 use Yii;
+use app\modules\user\models\User;
 
 /**
- * SignupForm form
+ * SignupForm forms
  */
 class SignupForm extends Model
 {
@@ -20,7 +21,7 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            //     'username' => Yii::t('app', 'USER_USERNAME'),
+                 'username' => Yii::t('app', 'USER_USERNAME'),
             'password' => Yii::t('app', 'USER_PASSWORD'),
         ];
     }
@@ -28,11 +29,11 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-         /*   ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'required'],
-            ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => User::className(), 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],*/
+            ['username', 'filter', 'filter' => 'trim'],
+ //           ['username', 'required'],
+            ['username', 'match', 'pattern' => '#^[\w_-]+$#i','message' => 'Только латинские буквы, цифры и знаки - _'],
+ //           ['username', 'unique', 'targetClass' => User::className(), 'message' => 'This username has already been taken.'],
+            ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
@@ -53,7 +54,7 @@ class SignupForm extends Model
     {
         if ($this->validate()) {
             $user = new User();
-        //    $user->username = $this->username;
+            $user->username = $this->username;
             $user->email = $this->email;
             $user->setPassword($this->password);
             $user->status = User::STATUS_WAIT;

@@ -4,9 +4,10 @@ namespace app\modules\user\models;
 
 use yii\base\Model;
 use Yii;
+use app\modules\user\models\User;
 
 /**
- * Password reset request form
+ * Password reset request forms
  */
 class PasswordResetRequestForm extends Model
 {

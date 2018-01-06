@@ -38,5 +38,29 @@ return [
     'HELLO {username}' => 'Здравствуйте, {username}!',
     'FOLLOW_TO_RESET_PASSWORD' => 'Для смены пароля пройдите по ссылке:',
     'FOLLOW_TO_CONFIRM_EMAIL' => 'Для подтверждения адреса пройдите по ссылке:',
-    'IGNORE_IF_DO_NOT_REGISTER' => 'Если Вы не регистрировались на нашем сайте, то просто удалите это письмо.'
+    'IGNORE_IF_DO_NOT_REGISTER' => 'Если Вы не регистрировались на нашем сайте, то просто удалите это письмо.',
+
+    'BLANK_RESET_PASSWORD' => 'Маркер сброса пароля не может быть пустым.',
+    'WRONG_RESET_PASSWORD' => 'Неверный ключ сброса пароля.',
+    'TITLE_RESET_PASSWORD' => 'Сброс пароля',
+    'PLEASE_FILL_FOR_RESET_REQUEST' => 'Пожалуйста, введите свой адрес электронной почты. Вам будет отправлена ​​ссылка на сброс пароля.',
+
+    'TITLE_PROFILE' => 'Профиль',
+    'USER_USERNAME' => 'Имя пользователя',
+    'TITLE_UPDATE' => 'Редактирование',
+    'USER_NEW_PASSWORD' => 'Новый пароль',
+    'USER_REPEAT_PASSWORD' => 'Повторите новый пароль',
+    'USER_CURRENT_PASSWORD' => 'Текущий пароль',
+    'ERROR_WRONG_CURRENT_PASSWORD' => 'Неверный текущий пароль',
+    'TITLE_PASSWORD_CHANGE' => 'Изменение пароля',
+    'LINK_PASSWORD_CHANGE' => 'Измененить пароль',
+    'BUTTON_PROFILE_UPDATE' => 'Редактировать профиль',
+    'NAV_ADMIN' => 'Администрирование',
+    'ADMIN_USERS' => 'Пользователи',
+    'ADMIN' => 'Администрирование',
+    'ADMIN_USERS_ADD' => 'Добавить пользователя',
+    'BUTTON_CREATE' => 'Создать',
+    'TITLE_PASSWORD_RESET' => 'Восстановление пароля',
+    'PLEASE_FILL_FOR_RESET' => 'Введите новый пароль:',
+
 ];
