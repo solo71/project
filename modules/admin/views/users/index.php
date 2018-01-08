@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\admin\components\ActionColumn;
+use app\components\grid\ActionColumn;
 use app\modules\admin\models\User;
 use app\components\grid\SetColumn;
 use app\components\grid\LinkColumn;
@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
             'id',
             [
                 'filter' => DatePicker::widget([

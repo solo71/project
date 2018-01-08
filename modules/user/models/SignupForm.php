@@ -4,7 +4,6 @@ namespace app\modules\user\models;
 
 use yii\base\Model;
 use Yii;
-use app\modules\user\models\User;
 
 /**
  * SignupForm forms
@@ -21,7 +20,7 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-                 'username' => Yii::t('app', 'USER_USERNAME'),
+            'username' => Yii::t('app', 'USER_USERNAME'),
             'password' => Yii::t('app', 'USER_PASSWORD'),
         ];
     }
@@ -62,7 +61,7 @@ class SignupForm extends Model
             $user->generateEmailConfirmToken();
 
             if ($user->save()) {
-                Yii::$app->mailer->compose('confirmEmail', ['user' => $user])
+                Yii::$app->mailer->compose('@app/modules/user/mails/confirmEmail', ['user' => $user])
                     ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
                     ->setTo($this->email)
                     ->setSubject('Email confirmation for ' . Yii::$app->name)
